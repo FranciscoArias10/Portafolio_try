@@ -627,3 +627,26 @@ footer {
   height: 100%;
   object-fit: cover;
 }
+.floating-theme-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px; /* ← Cambiado de left a right */
+  z-index: 9999;
+  padding: 0.75rem;
+  background-color: var(--card-bg);
+  color: var(--retro-green);
+  border: none;
+  box-shadow: 0 0 0 2px var(--retro-green), 0 0 0 4px #000,
+    0 0 0 6px var(--retro-green);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-theme-btn:hover {
+  background-color: var(--card-hover);
+  transform: scale(1.1);
+}
