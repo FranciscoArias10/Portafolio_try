@@ -1,12 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalle de Proyecto - Pixel Portfolio</title>
     <link rel="stylesheet" href="index.css" />
-    <title>Francisco Arias</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <
   </head>
   <body>
-    <div class="fondo-patron"></div>
+    <div class="pixelated-background"></div>
+    <div class="floating-pixels" id="floatingPixels"></div>
+
+    <div class="container">
+      <header>
+        <h1 class="font-pixel">Mi Portafolio</h1>
+        <div class="profile-image-container">
+          <img
+            src="img/Francisco_1.jpg"
+            alt="Mi foto de perfil"
+            class="profile-image"
+          />
+        </div>
+        <p class="font-mono">Desarrollo • Diseño • Creatividad</p>
+
+        <nav class="nav-menu">
+          <a href="index.html#proyectos" class="nav-item pixelated-border">
+            <i data-lucide="code" class="nav-icon"></i>
+            <span class="font-pixel">Proyectos</span>
+          </a>
+          <a href="index.html#habilidades" class="nav-item pixelated-border">
+            <i data-lucide="zap" class="nav-icon"></i>
+            <span class="font-pixel">Habilidades</span>
+          </a>
+          <a href="index.html#contacto" class="nav-item pixelated-border">
+            <i data-lucide="mail" class="nav-icon"></i>
+            <span class="font-pixel">Contacto</span>
+          </a>
+        </nav>
+
+        <button id="themeToggle" class="theme-toggle pixelated-border">
+          <i data-lucide="sun" class="theme-icon"></i>
+        </button>
+      </header>
+
+      <main>
+        <article class="project-detail">
+          <a href="index.html" class="back-link font-pixel">
+            <i data-lucide="arrow-left" class="back-icon"></i> Volver
+          </a>
+
+          <h1 id="projectTitle" class="font-pixel">Cargando proyecto...</h1>
+          <span id="projectCategory" class="tag">Categoría</span>
+
+          <div class="project-content">
+            <div class="project-images">
+              <img
+                id="projectImage"
+                src="/placeholder.svg?height=400&width=600"
+                alt="Imagen del proyecto"
+                class="pixelated-border"
+              />
+            </div>
+
+            <div id="projectDescription" class="font-mono project-description">
+              Cargando descripción del proyecto...
+            </div>
+
+            <div class="project-meta">
+              <div class="meta-item pixelated-border">
+                <h3 class="font-pixel">Tecnologías</h3>
+                <ul id="projectTech" class="font-mono">
+                  <li>Cargando...</li>
+                </ul>
+              </div>
+
+              <div class="meta-item pixelated-border">
+                <h3 class="font-pixel">Duración</h3>
+                <p id="projectDuration" class="font-mono">Cargando...</p>
+              </div>
+
+              <div class="meta-item pixelated-border">
+                <h3 class="font-pixel">Enlaces</h3>
+                <div id="projectLinks" class="project-links">
+                  <a href="#" class="project-link pixelated-border">
+                    <i data-lucide="external-link" class="link-icon"></i>
+                    <span class="font-mono">Demo</span>
+                  </a>
+                  <a href="#" class="project-link pixelated-border">
+                    <i data-lucide="github" class="link-icon"></i>
+                    <span class="font-mono">Código</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-share">
+            <h3 class="font-pixel">Compartir</h3>
+            <div class="share-links">
+              <a href="#" class="share-link pixelated-border">
+                <i data-lucide="twitter" class="share-icon"></i>
+              </a>
+              <a href="#" class="share-link pixelated-border">
+                <i data-lucide="facebook" class="share-icon"></i>
+              </a>
+              <a href="#" class="share-link pixelated-border">
+                <i data-lucide="linkedin" class="share-icon"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-navigation">
+            <a href="#" id="prevProject" class="nav-project pixelated-border">
+              <i data-lucide="arrow-left" class="nav-icon"></i>
+              <span class="font-pixel">Anterior</span>
+            </a>
+            <a href="#" id="nextProject" class="nav-project pixelated-border">
+              <span class="font-pixel">Siguiente</span>
+              <i data-lucide="arrow-right" class="nav-icon"></i>
+            </a>
+          </div>
+        </article>
+      </main>
+
+      <footer>
+        <p class="font-mono">
+          © 2023 Mi Portafolio Pixel. Todos los derechos reservados.
+        </p>
+      </footer>
+    </div>
+
+    <script src="index.js"></script>
+    <script src="proyecto.js"></script>
   </body>
 </html>
