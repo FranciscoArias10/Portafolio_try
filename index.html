@@ -34,19 +34,27 @@
         <p class="font-mono">Desarrollo • Diseño • Creatividad</p>
 
         <nav class="nav-menu">
-          <a href="index.html#proyectos" class="nav-item pixelated-border">
+          <a href="#" class="nav-item pixelated-border" data-section="sobreMi">
             <i data-lucide="user" class="nav-icon"></i>
             <span class="font-pixel">Sobre mí</span>
           </a>
-          <a href="index.html#proyectos" class="nav-item pixelated-border">
+          <a
+            href="#"
+            class="nav-item pixelated-border"
+            data-section="proyectos"
+          >
             <i data-lucide="code" class="nav-icon"></i>
             <span class="font-pixel">Proyectos</span>
           </a>
-          <a href="index.html#habilidades" class="nav-item pixelated-border">
+          <a
+            href="#"
+            class="nav-item pixelated-border"
+            data-section="habilidades"
+          >
             <i data-lucide="zap" class="nav-icon"></i>
             <span class="font-pixel">Habilidades</span>
           </a>
-          <a href="index.html#contacto" class="nav-item pixelated-border">
+          <a href="#" class="nav-item pixelated-border" data-section="contacto">
             <i data-lucide="mail" class="nav-icon"></i>
             <span class="font-pixel">Contacto</span>
           </a>
@@ -54,82 +62,11 @@
       </header>
 
       <main>
-        <article class="project-detail">
+        <article class="project-detail" id="mainContent">
           <a href="index.html" class="back-link font-pixel">
-            <i data-lucide="arrow-left" class="back-icon"></i> Volver
-          </a>
+            
 
-          <h1 id="projectTitle" class="font-pixel">Cargando proyecto...</h1>
-          <span id="projectCategory" class="tag">Categoría</span>
-
-          <div class="project-content">
-            <div class="project-images">
-              <img
-                id="projectImage"
-                src="/placeholder.svg?height=400&width=600"
-                alt="Imagen del proyecto"
-                class="pixelated-border"
-              />
-            </div>
-
-            <div id="projectDescription" class="font-mono project-description">
-              Cargando descripción del proyecto...
-            </div>
-
-            <div class="project-meta">
-              <div class="meta-item pixelated-border">
-                <h3 class="font-pixel">Tecnologías</h3>
-                <ul id="projectTech" class="font-mono">
-                  <li>Cargando...</li>
-                </ul>
-              </div>
-
-              <div class="meta-item pixelated-border">
-                <h3 class="font-pixel">Duración</h3>
-                <p id="projectDuration" class="font-mono">Cargando...</p>
-              </div>
-
-              <div class="meta-item pixelated-border">
-                <h3 class="font-pixel">Enlaces</h3>
-                <div id="projectLinks" class="project-links">
-                  <a href="#" class="project-link pixelated-border">
-                    <i data-lucide="external-link" class="link-icon"></i>
-                    <span class="font-mono">Demo</span>
-                  </a>
-                  <a href="#" class="project-link pixelated-border">
-                    <i data-lucide="github" class="link-icon"></i>
-                    <span class="font-mono">Código</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="social-share">
-            <h3 class="font-pixel">Compartir</h3>
-            <div class="share-links">
-              <a href="#" class="share-link pixelated-border">
-                <i data-lucide="twitter" class="share-icon"></i>
-              </a>
-              <a href="#" class="share-link pixelated-border">
-                <i data-lucide="Instagram" class="share-icon"></i>
-              </a>
-              <a href="#" class="share-link pixelated-border">
-                <i data-lucide="linkedin" class="share-icon"></i>
-              </a>
-            </div>
-          </div>
-
-          <div class="project-navigation">
-            <a href="#" id="prevProject" class="nav-project pixelated-border">
-              <i data-lucide="arrow-left" class="nav-icon"></i>
-              <span class="font-pixel">Anterior</span>
-            </a>
-            <a href="#" id="nextProject" class="nav-project pixelated-border">
-              <span class="font-pixel">Siguiente</span>
-              <i data-lucide="arrow-right" class="nav-icon"></i>
-            </a>
-          </div>
+         
         </article>
       </main>
       <button
@@ -146,5 +83,49 @@
 
     <script src="index.js"></script>
     <script src="proyecto.js"></script>
+    <script>
+      const content = {
+        proyectos: `
+      <h1 class="font-pixel">Mis Proyectos</h1>
+      <p class="font-mono">Aquí se muestran todos los proyectos que he realizado.</p>
+      <!-- Aquí podrías poner un listado dinámico o contenido como el que ya tienes -->
+    `,
+        sobreMi: `
+      <h1 class="font-pixel">Sobre Mí</h1>
+      <p class="font-mono">Soy Francisco Arias, un apasionado por el desarrollo, diseño y creatividad.</p>
+    `,
+        habilidades: `
+      <h1 class="font-pixel">Habilidades</h1>
+      <ul class="font-mono">
+        <li>JavaScript</li>
+        <li>HTML/CSS</li>
+        <li>React</li>
+        <li>Diseño Pixel Art</li>
+      </ul>
+    `,
+        contacto: `
+      <h1 class="font-pixel">Contacto</h1>
+      <p class="font-mono">Puedes escribirme a francisco@example.com</p>
+    `,
+      };
+
+      const navItems = document.querySelectorAll(".nav-item");
+      const mainContent = document.getElementById("mainContent");
+
+      function cambiarSeccion(seccion) {
+        mainContent.innerHTML = content[seccion];
+      }
+
+      navItems.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          e.preventDefault();
+          const seccion = item.getAttribute("data-section");
+          cambiarSeccion(seccion);
+        });
+      });
+
+      // Mostrar sección por defecto al cargar
+      cambiarSeccion("proyectos");
+    </script>
   </body>
 </html>
