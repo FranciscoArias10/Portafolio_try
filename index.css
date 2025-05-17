@@ -868,14 +868,6 @@ footer {
   opacity: 1;
 }
 
-/* The Main Switch */
-
-.card_content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* The switch - the box around the slider */
 .switch_738 {
   font-size: 13px;
@@ -967,4 +959,44 @@ footer {
 .chk_738:checked + .slider_738:after {
   transform: rotateZ(90deg) rotateY(180deg) translateY(0.45em)
     translateX(-1.4em);
+}
+
+/* card foto proyectos */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: flex-start;
+  padding: 2rem;
+}
+
+.retro-card {
+  background-color: #0a0f19;
+  border-radius: 15px;
+  width: 300px;
+  padding: 1rem;
+
+  font-family: "Press Start 2P", monospace;
+}
+
+.retro-header {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.retro-body {
+  border-radius: 12px;
+  padding: 10px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.retro-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
